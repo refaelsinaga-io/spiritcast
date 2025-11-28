@@ -19,7 +19,7 @@ export default function Register({ navigation }) {
 
     const handleRegister = () => {
         // console.log('Register pressed');
-        // Temporary redirect to login for prototype
+        // After successful registration, redirect to login
         navigation.navigate('Login');
     };
 

@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function Home() {
+export default function Profile() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text>Home Page</Text>
+        <Text>Profile Page</Text>
       </View>
     </SafeAreaView>
   );

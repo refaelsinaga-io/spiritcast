@@ -18,8 +18,8 @@ export default function Login({ navigation }) {
 
     const handleLogin = () => {
         // console.log('Login pressed');
-        // Temporary redirect to home for prototype
-        navigation.navigate('Home');
+        // Temporary redirect to main for prototype
+        navigation.getParent()?.navigate('Main');
     };
 
     return (
