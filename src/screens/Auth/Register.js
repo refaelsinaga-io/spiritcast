@@ -12,13 +12,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Register({ navigation }) {
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleLogin = () => {
-        // console.log('Login pressed');
-        // Temporary redirect to home for prototype
+    const handleRegister = () => {
+        // console.log('Register pressed');
+        // Temporary redirect to login for prototype
         navigation.navigate('Login');
     };
 
@@ -100,19 +101,19 @@ export default function Register({ navigation }) {
                     <Text style={styles.forgotText}>Forgot Password?</Text>
                 </TouchableOpacity>
 
-                {/* Login Button */}
+                {/* Register Button */}
                 <TouchableOpacity
                     style={styles.loginButton}
-                    onPress={handleLogin}
+                    onPress={handleRegister}
                 >
-                    <Text style={styles.loginButtonText}>LOGIN</Text>
+                    <Text style={styles.loginButtonText}>REGISTER</Text>
                 </TouchableOpacity>
 
-                {/* Sign Up Link */}
+                {/* Login Link */}
                 <View style={styles.signupContainer}>
-                    <Text style={styles.signupText}>Don't have an account! </Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                        <Text style={styles.signupLink}>Register</Text>
+                    <Text style={styles.signupText}>Already have an account! </Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.signupLink}>Login</Text>
                     </TouchableOpacity>
                 </View>
             </View>

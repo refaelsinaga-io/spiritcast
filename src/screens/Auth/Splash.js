@@ -10,7 +10,11 @@ export default function Splash({ navigation }) {
 
   return (
 		<View style={styles.container}>
-			<Image source={{ uri: 'https://onvonic.com/assets/logo.png' }} style={styles.logo} />
+			<Image
+				source={{ uri: 'https://onvonic.com/assets/logo.png' }}
+				style={styles.logo}
+				resizeMode="contain"
+			/>
 		</View>
 	);
 }
@@ -25,6 +29,5 @@ const styles = StyleSheet.create({
 	logo: {
 		width: 160,
 		height: 160,
-		resizeMode: 'contain',
 	},
 });
