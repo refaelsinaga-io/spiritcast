@@ -6,7 +6,7 @@ import Home from '../screens/Main/Home';
 import Event from '../screens/Main/Event';
 import Media from '../screens/Main/Media';
 import Comunity from '../screens/Main/Comunity';
-import Profile from '../screens/Main/Profile';
+import ProfileStack from './ProfileStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,11 +23,11 @@ export default function MainTab() {
                     if (route.name === 'Home') {
                         iconName = focused ? 'home' : 'home-outline';
                     } else if (route.name === 'Media') {
-                        iconName = focused ? 'calendar' : 'play-circle';
+                        iconName = focused ? 'play-circle' : 'play-circle-outline';
                     } else if (route.name === 'Event') {
-                        iconName = focused ? 'newspaper' : 'calendar-outline';
+                        iconName = focused ? 'calendar' : 'calendar-outline';
                     } else if (route.name === 'Comunity') {
-                        iconName = focused ? 'comunity' : 'people-outline';
+                        iconName = focused ? 'people' : 'people-outline';
                     } else if (route.name === 'Profile') {
                         iconName = focused ? 'person' : 'person-outline';
                     }
@@ -50,7 +50,7 @@ export default function MainTab() {
             <Tab.Screen name="Media" component={Media} />
             <Tab.Screen name="Event" component={Event} />
             <Tab.Screen name="Comunity" component={Comunity} />
-            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="Profile" component={ProfileStack} />
         </Tab.Navigator>
     );
 }
