@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -50,7 +51,24 @@ export default function MainTab() {
             <Tab.Screen name="Media" component={Media} />
             <Tab.Screen name="Event" component={Event} />
             <Tab.Screen name="Comunity" component={Comunity} />
-            <Tab.Screen name="Profile" component={ProfileStack} />
+            <Tab.Screen
+                name="Profile"
+                component={ProfileStack}
+                options={({ route }) => {
+                    const routeName = getFocusedRouteNameFromRoute(route) ?? 'ProfileMain';
+
+                    return {
+                        tabBarStyle: routeName === 'ProfileMain' ? {
+                            paddingBottom: insets.bottom > 0 ? insets.bottom : 10,
+                            paddingTop: 5,
+                            height: 60 + (insets.bottom > 0 ? insets.bottom : 10),
+                            backgroundColor: '#fff',
+                            borderTopWidth: 1,
+                            borderTopColor: '#e0e0e0',
+                        } : { display: 'none' }
+                    };
+                }}
+            />
         </Tab.Navigator>
     );
 }
